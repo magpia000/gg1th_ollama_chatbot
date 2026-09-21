@@ -62,10 +62,38 @@ uv add sqlalchemy oracledb
 > 모든 패키지는 루트의 `pyproject.toml` 한 곳에 기록되며, 실습 폴더를 옮겨 다녀도 같은 `.venv`를 공유합니다.
 
 ## 3. 프론트엔드 설정 (Node.js)
-- 프로젝트 베이스 폴더에서 frontedn 폴더 생성
-```bash
+### nvm, nodejs 설치
+```
+sudo apt install -y curl
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+source ~/.bashrc
+
+nvm --version
+
+# nodejs 22 설치
+nvm install 22  
+
+# 지금 이 터미널에서 Node 22 사용
+nvm use 22
+
+# 앞으로 새 터미널에서도 기본 Node를 22로 사용
+nvm alias default 22
+
+node -v
+npm -v
+```
+
+### react 프로젝트 생성
+```
+npm create vite@latest frontend -- --template react
+
 cd frontend
+
+# 현재 Node.js 프로젝트에 필요한 패키지들을 설치하는 명령
 npm install
+
+# axios 설치
+npm install axios
 ```
 
 ## 4. 실행 방법
